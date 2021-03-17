@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+	<link rel="stylesheet" type="text/css" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body, html { margin:0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: cursive;
+			background-color: darkred;
+		}
+		.contact
+		{
+			position: relative;
+			min-height: 100vh;
+			padding: 50px 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background: darkred;
+			background-size: cover;
+		}
+		.contact .content
+		{
+			max-width: 800px;
+			text-align: center;
+		}
+		.contact .content h2
+		{ 
+			font-size: 36px;
+			font-weight: 500;
+			color:#fff;
+		}
+		.contact .content p
+		{ 
+			font-weight: 500;
+			color:#fff;
+		}
+		.container
+		{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 30px;
+		}
+		.container .contactInfo
+		{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+		}
+		.container .contactInfo .box
+		{
+			position: relative;
+			padding: 20px 0;
+			display: flex;
+		}
+		.container .contactInfo .box .icon
+		{
+			min-width: 60px;
+			height: 60px;
+			background: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			font-size: 22px;
+		}
+		.container .contactInfo .box .text
+		{
+			display: flex;
+			margin-left: 20px;
+			color: #fff;
+			flex-direction: column;
+			font-weight: 300;
+		}
+		.container .contactInfo .box .text h3
+		{
+			font-weight: 500;
+			color: #fff;
+		}
+		.contactForm
+		{
+			width: 40%;
+			padding: 40px;
+			background: #fff;
+		}
+		.contactForm h2
+		{
+			font-size: 30px;
+			color: #333;
+			font-weight: 500;
+		}
+		.contactForm .inputBox
+		{
+			position: relative;
+			width: 100%;
+			margin-top: 10px;
+		}
+		.contactForm .inputBox input,
+		.contactForm .inputBox textarea
+		{
+			width: 100%;
+			padding: 5px 0;
+			font-size: 16px;
+			margin: 10px 0;
+			border:none;
+			border-bottom: 2px solid #333;
+			outline: none;
+			resize: none;
+
+		}
+		.contactForm .inputBox span
+		{
+			position: absolute;
+			left: 0;
+			padding: 5px 0;
+			font-size: 16px;
+			margin:10px 0;
+			pointer-events: none;
+			transition: 0.5s;
+			color:#666;
+		}
+		.contactForm .inputBox input:focus ~ span,
+		.contactForm .inputBox input:valid ~ span,
+		.contactForm .inputBox textarea:focus ~ span,
+		.contactForm .inputBox textarea:valid ~ span
+		{
+			color: red;
+			font-size: 12px;
+			transform: translateY(-20px);
+
+		}
+	</style>
+</head>
+<body>
+	<section class="contact">
+		<div class="content">
+			<h2><address>Contact Us<address/></h2>
+		</div>
+		<div class="container">
+			<div class="contactInfo">
+				<div class="box">
+					<div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+					<div class="text">
+						<h1>Address</h1>
+						<address>Avenue Centre, 787 CDA Avenue,<br>Chittagong</address>
+					</div>
+				</div>
+				<div class="box">
+					<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+					<div class="text">
+						<h3>Phone</h3>
+						<address>01712312311</address>
+					</div>
+				</div>
+				<div class="box">
+					<div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+					<div class="text">
+						<h3>Email</h3>
+						<address>kenketsu@gmail.com</address>
+					</div>
+				</div>
+			</div>
+			<div id="error_message"></div>
+			<div class="contactForm">
+				<form id="contactform" onsubmit="return validation()">
+					<h2>Send Message</h2>
+					<div class="inputBox">
+						<input type="text" name="" id="name" required="required">
+						<span>Full Name</span>
+					</div>
+					<div class="inputBox">
+						<input type="text" name="" id="email" required="required">
+						<span>Email</span>
+					</div>
+					<div class="inputBox">
+						<textarea required="required" id="message"></textarea> 
+						<span>Type your message...</span>
+					</div>
+					<div class="inputBox">
+						<input type="submit" name="Send" value="Send">
+					</div>
+				</form>
+			</div>
+		</section>
+		<p style="color:red ,font-size:40px,font-family:cursive;";><center><a href="home.html">Back to Home</a></center></p>
+		<script>
+			function validation()
+			{
+				var name= document.getElementById("name").value;
+				var email= document.getElementById("email").value;
+				var message= document.getElementById("message").value;
+				var error_message=document.getElementById("error_message");
+				error_message.style.padding="10px";
+				if(name.length <5)
+				{
+					text ="Please Enter Valid Name";
+					alert(text)
+					return false;
+				}
+				if(email.indexOf("@")==-1 || email.length<6)
+				{
+					text ="Please Enter Valid email";
+					alert(text)
+					return false;
+				}
+				if(message.length <100)
+				{
+					text ="Please Enter More than 100 characters";
+					alert(text)
+					return false;
+				}
+               alert(" Your response has been submitted successfully")
+				return true;
+			}
+		</script>
+	</body>
+	</html>

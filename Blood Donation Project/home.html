@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kenketsu</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="menubar">
+    <div class="nav-bar">
+     <div class="nav-logo">
+       <h1 style="color: aliceblue">Kenketsu</h1>
+       <img src="logo1.png" alt="logo">
+     </div>
+     <div class="nav-links" id="nav-links">
+    <i class="fa fa-close" onclick="closeMenu()"></i>
+     
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">About Us</a>
+          <ul>
+            <li><a href="about.html" target="_blank">Kenketsu</a></li>
+            <li><a href="info.html" target="_blank">Terms and conditions</a></li>
+          </ul>
+        </li>
+        <li><a href="donor.php" target="_blank">Donor Registration</a></li>
+        <li><a href="searchblood.php" target="_blank">Request Blood</a></li>
+        <li><a href="elig.html" target="_blank">Eligibility</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
+
+        <button type="button" class="btn" onclick="window.open('logm.php');">Log in</button>  <!-- window.open = new window -->
+         <!-- window.location.href = same window -->
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </div>
+  <div class="banner-title">
+   <h1>Welcome to <span style="font-size: 50px";><big>Kenketsu</big></span></h1>
+   <h1><span>You don't have to </span>be doctor<br>
+    to save lives...<br><span>Just Donate</span> Blood</h1>
+    <button type="button" class="btn" onclick="window.location.href='about.html';">Learn More</button>
+  </div>
+  <div class="vertical-bar">
+    <div class="search-icons">
+      <i class="fa fa-list"></i>
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+  <script>
+    var show= document.getElementById("nav-links");
+    function showMenu()
+    {
+      show.style.right="0";
+    }
+    function closeMenu()
+    {
+      show.style.right="-200px";
+    }
+  </script>
+</body>
+
+</html>
+ 
